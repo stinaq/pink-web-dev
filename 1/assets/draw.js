@@ -43,3 +43,10 @@ Draw.Shape = function() {
     circle: circle
   };
 }();
+
+drawSquare = Draw.Shape.square;
+drawCircle = Draw.Shape.circle;
+
+
+
+

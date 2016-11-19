@@ -22,3 +22,9 @@
   left: 0;
   border-radius: 50%;
 }
+
+.large-text {
+  font-size: 10em;
+  margin: 0;
+  color: #E72486;
+}
