@@ -1,5 +1,5 @@
-function makeSpaghetti() {
-  console.log("NU SKA VI GÖRA SPAGHETTI KÖTTFÄRSSÅS");
+function makeSpagetti() {
+  console.log("NU SKA VI GÖRA SPAGETTI KÖTTFÄRSSÅS");
   console.log("Sätta på vatten");
   console.log("Hälla i salt");
   console.log("lägga på lock");
@@ -13,12 +13,7 @@ function makeSpaghetti() {
   console.log("Om bra kryddat så är du klar.");
 }
 
-function sayHello(name) {
-  console.log("Hej " + name);
-  return 5;
-}
 
-sayHello();
 
 
 
