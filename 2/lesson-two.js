@@ -63,7 +63,6 @@ animals[1];
 animals[2];
 
 animals.forEach(function(element) {
-  console.log(element);
   addMediumText(element);
 });
 
