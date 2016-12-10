@@ -35,7 +35,14 @@ Draw.Shape = function() {
     position(newSquare, left, top, height, width);
 
     var container = document.getElementById('shape-container')
-    container.appendChild(newSquare);
+
+    if(container) {
+      container.appendChild(newSquare);
+    }
+    else {
+      var body = document.getElementsByTagName('body')[0];
+      body.appendChild(newSquare);
+    }
   };
 
   return {
