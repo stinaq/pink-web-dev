@@ -37,4 +37,21 @@
 
 .exercise-column {
   padding: 50px;
+  flex: 1;
+  position: relative;
+}
+
+.exercise-output-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.exercise-fixed {
+  position: fixed;
+  width: 40%;
+}
+
+.exercise-fixed button {
+  height: 20px;
+  margin-top: 10px;
 }
