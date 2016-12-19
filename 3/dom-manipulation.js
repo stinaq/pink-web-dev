@@ -7,4 +7,8 @@
   input.addEventListener('blur', function() {
     
   });
+
+  $('#validatable-input').on('keyup', function(test) {
+    console.log($('#validatable-input').val());
+  })
 })();
