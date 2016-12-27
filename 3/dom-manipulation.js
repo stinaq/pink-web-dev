@@ -10,5 +10,8 @@
 
   $('#validatable-input').on('keyup', function(test) {
     console.log($('#validatable-input').val());
+
+    var thisInput = $('#validatable-input');
+    $('#welcome-text').text(thisInput.val());
   })
 })();
