@@ -9,18 +9,18 @@
     } else {
       turnLightOn();
     }
-
-    isLightOn = !isLightOn;
   }
 
   function turnLightOn() {
     var lightElement = document.querySelector('#light');
     lightElement.src = "img/light-on.jpg";
+    isLightOn = true;
   }
 
   function turnLightOff() {
     var lightElement = document.querySelector('#light');
     lightElement.src = "img/light-off.jpg";
+    isLightOn = false;
   }
 
   document.querySelector('#hover-me')
