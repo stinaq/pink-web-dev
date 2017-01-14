@@ -1,34 +1,38 @@
 (function() {
   'use strict';
 
-  function leftPadWithText(text) {
-
-    return '';
+  function leftPadWithText(originalText) {
+    return 'Text: ' + originalText;
   }
 
-  function replaceKattWithHund(text) {
-    var replacedText = text.replace('katt', 'hund');
-    return replacedText;
+  function replaceCatWithDog(originalText) {
+    return originalText.replace('katt', 'hund');
   }
 
-  function addStinaEnding(text) {
-    var textWithEnding;
+  function addBangEnding(originalText) {
+    var bangEnded;
 
-    if (text.includes('Stina')) {
-      textWithEnding = text + ' Text om Stina';
-    }
-    else {
-      textWithEnding = text;
+    if(originalText.includes('häst')) {
+      bangEnded = originalText + '!';
+    } else {
+      bangEnded = originalText;
     }
 
-    return textWithEnding;
+    return bangEnded;
   }
 
-  function uglyfyText(originalText) {
-    var modifiedText = '';
+  function makeTextUgly(originalText) {
+    var leftPadded = leftPadWithText(originalText);
+    var withoutCat = replaceCatWithDog(leftPadded);
+    var bangEnded = addBangEnding(withoutCat);
 
-
-    return modifiedText;
+    return bangEnded;
   }
+
+  var someText = 'Här är en text med bland annat orden katt och häst i';
+
+
+  var result = makeTextUgly(someText);
+  console.log(result);
 
 }());
