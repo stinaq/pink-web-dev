@@ -1,45 +1,12 @@
 (function() {
   'use strict';
-
+  /* 
+  Det som loggas ut här är undefined
+  */
   console.log(myNewVariable);
   var myNewVariable = 'hej';
 
 }());
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 (function() {
   'use strict';
@@ -65,9 +32,11 @@
   var favouriteShow;
 
   function declareFavouriteShow() {
-    // För att sedan tilldela dem värde
-    favouriteShow = 'West Wing';
+    return 'West Wing';
   }
+
+  // För att sedan tilldela dem värde
+  var favouriteShow = declareFavouriteShow();
 
 }());
 
@@ -88,5 +57,3 @@
   }
 
 }());
-
-
