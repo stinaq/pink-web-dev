@@ -20,28 +20,32 @@ Draw.Shape = function() {
     }
   };
 
-  var square = function(left, top, height, width) {
-    createShape(left, top, height, width, 'square')
+  var square = function(left, top, height, width, color) {
+    createShape(left, top, height, width, color, 'square')
   };
 
-  var circle = function(left, top, height, width) {
-    createShape(left, top, height, width, 'circle')
+  var circle = function(left, top, height, width, color) {
+    createShape(left, top, height, width, color, 'circle')
   };
 
-  var createShape = function(left, top, height, width, shapeType) {
-    var newSquare = document.createElement("div");
-    newSquare.className = shapeType;
+  var createShape = function(left, top, height, width, color, shapeType) {
+    var newShape = document.createElement("div");
+    newShape.className = shapeType;
 
-    position(newSquare, left, top, height, width);
+    position(newShape, left, top, height, width);
+
+    if(color) {
+      newShape.style.background = color;
+    }
 
     var container = document.getElementById('shape-container')
 
     if(container) {
-      container.appendChild(newSquare);
+      container.appendChild(newShape);
     }
     else {
       var body = document.getElementsByTagName('body')[0];
-      body.appendChild(newSquare);
+      body.appendChild(newShape);
     }
   };
 

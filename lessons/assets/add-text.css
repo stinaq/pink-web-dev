@@ -1,0 +1,9 @@
+.container {
+  position: relative;
+}
+
+.large-text {
+  font-size: 10em;
+  margin: 0;
+  color: #E72486;
+}
