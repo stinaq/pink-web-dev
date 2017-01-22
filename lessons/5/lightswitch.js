@@ -1,35 +1,36 @@
-(function() {
+var Lightswitch = (function() {
   'use strict';
 
   var isLightOn = false;
 
   function toggleLight() {
-    if (isLightOn) {
+    if(isLightOn) {
+      // Om lampan är tänd --> släck den
       turnLightOff();
     } else {
+      // om lampan är släckt --> tänd den
       turnLightOn();
     }
   }
 
   function turnLightOn() {
+    // hämta elementet
     var lightElement = document.querySelector('#light');
-    lightElement.src = "img/light-on.jpg";
+    // byta ut bilden mot en bild på släckt lampa
+    lightElement.src = 'img/light-on.jpg';
     isLightOn = true;
   }
 
   function turnLightOff() {
+    // hämta elementet
     var lightElement = document.querySelector('#light');
-    lightElement.src = "img/light-off.jpg";
+    // byta ut bilden mot en bild på tänd lampa
+    lightElement.src = 'img/light-off.jpg';
     isLightOn = false;
   }
 
-  document.querySelector('#hover-me')
-    .addEventListener('mouseenter', toggleLight);
-
-  document.querySelector('#click-me')
-    .addEventListener('click', toggleLight);
-
-  document.querySelector('#blur-me')
-    .addEventListener('blur', toggleLight);
+  return {
+    toggle: toggleLight
+  }
 
 }());
