@@ -1,23 +1,34 @@
 (function() {
   'use strict';
 
-  const arrayOfStrings = ["one", "two", "three"];
-  reverseMut(arrayOfStrings);
-  toUpperCaseMut(arrayOfStrings);
-  // Print a reverse list of upper cased strings
   console.log(arrayOfStrings);
-  // Also print a reverse list of original cased strings with ! appended
-  // ????
-
-  // With return and no mutation
-
   var arrayOfStrings = ["one", "two", "three"];
-  var reversed = reverse(arrayOfStrings);
-  var upperCased = toUpperCase(reversed);
-  // Print a reverse list of upper cased strings
-  console.log(upperCased);
-  // Also print a reverse list of original cased strings with ! appended
-  var appended = appendBang(reversed);
-  console.log(appended);
+  // reverse(arrayOfStrings);
+  // toUpperCase(arrayOfStrings);
+  // console.log(arrayOfStrings);
 
+  var reversed = reverse2(arrayOfStrings);
+  var upperCased = toUpperCase2(reversed);
+  console.log(upperCased);
+  console.log(arrayOfStrings);
+
+  function reverse(array) {
+    array.reverse();
+  }
+
+  function toUpperCase(array) {
+    array.forEach(function(item, index) {
+      array[index] = item.toUpperCase()
+    });
+  }
+
+  function reverse2(array) {
+    return array.reverse();
+  }
+
+  function toUpperCase2(array) {
+    return array.map(function(item) {
+      return item.toUpperCase();
+    });
+  }
 }());
