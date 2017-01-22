@@ -1,40 +1,58 @@
 (function() {
   'use strict';
+  /*
+  Gör en funktion som berättar om ett ord är ett palindrom
+  */
 
+  // imperativ progammering
   function isPalindrome(word) {
-    // För att veta om något är ett palindrom
-    // behöver vi titta på första bokstaven och
-    // jämföra med sista, sen nästa inåt
-
     var result = true;
+    // for varje bokstav i ordet, kolla motsvarande på slutet
+    // kolla hälften av ordet, mer behövs inte
+    // är alla samma så är det ett palindrom, annars inte
+
     var halfLength = Math.floor(word.length / 2);
 
-    for (var i = 0; i < halfLength; i++) {
+    for(var i = 0; i < halfLength; i++) {
       var currentLetter = word[i];
       var currentCorrespondingLetter = word[word.length - i - 1];
-      if (currentLetter !== currentCorrespondingLetter) {
+
+      if(currentLetter !== currentCorrespondingLetter) {
         result = false;
       }
     }
 
     return result;
-  }  
+  }
 
+  function reverseWord(originalWord) {
+    return originalWord.split('').reverse().join('');
+  }
+
+  // deklarativ programmering
   function isPalindrome2(word) {
-    // Ett palindrom är en textsträng som är likadan
-    // framlänges och baklänges.
-
-    // Vi kan i pseudokod beskriva det så här
-    // palindrom = framlänges text === baklänges text
-
+    // palindrom = framlängestext är likamed baklänges text
     return word === reverseWord(word);
   }
 
-  function reverseWord(word) {
-    return word.split('').reverse().join('');
-  }
+  var temp1 = isPalindrome2('anna');
+  console.log('Ska bli sant'); 
+  console.log(temp1);
 
-  window.isPalindrome = isPalindrome;
-  window.bla = isPalindrome2;
+  var temp2 = isPalindrome2('tacocat');
+  console.log('Ska bli sant'); 
+  console.log(temp2);
 
-}());
+  var temp3 = isPalindrome2('stina');
+  console.log('Ska bli falskt'); 
+  console.log(temp3);
+
+  var temp4 = isPalindrome2('stinas');
+  console.log('Ska bli falskt'); 
+  console.log(temp4);
+
+  var temp5 = isPalindrome2('Tacocat');
+  console.log('Ska bli sant'); 
+  console.log(temp5);
+
+})();
