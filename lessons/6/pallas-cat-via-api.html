@@ -1,21 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>The Harry Potter Page fetching from API</title>
+  <title>Pallaskatt med extern data</title>
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" />
+  <link rel="stylesheet" type="text/css" href="pallas-cat.css">
 </head>
 
 <body>
-  <h1>Häst</h1>
 
-  <ul id="character-list">
-    
-  </ul>
+  <div class="container">
+    <div class="row">
+      <div class="twelve columns">
+        <h1 id="headline"></h1>
+        <h5>Latinskt namn: <span id="latin-name"></span></h5>
+      </div>
+    </div>
+    <div class="row">
+      <div class="five columns">
+        <p id="characteristics"></p>
+      </div>
+      <div class="seven columns">
+        <img id="image" class="animal-image">
+      </div>
+    </div>
 
-  <input type="text" id="new-character-name" placeholder="namn">
-  <button id="new-character-button">Lägg till ny</button>
+    <div class="row">
+      <div class="twelve columns">
+        <h5>Byt bildlänk</h5>
+        <input type="text" name="new-image-url" id="new-image-url">
+        <button id="new-image-url-button">Spara</button>
+      </div>
+    </div>
+  </div>
 
-  <script type="text/javascript" src="harry-potter-page-api.js"></script>
+  <script type="text/javascript" src="pallas-cat-via-api.js"></script>
 </body>
 </html>
