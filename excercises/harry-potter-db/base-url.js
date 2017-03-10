@@ -1,0 +1,1 @@
+const apiUrl = 'https://testapi.pinkwebdev.se/api/characters';
