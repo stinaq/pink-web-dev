@@ -1,0 +1,17 @@
+{
+  "name": "pinkwebdev-seed",
+  "version": "1.0.0-beta.1",
+  "author": "Johanna Larsson <johanna.a.m.larsson@gmail.com>",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "serve": "lite-server",
+    "lint": "eslint -c .eslintrc.json src/",
+    "uglify": "uglifyjs -o ./src/main.min.js ./src/main.js"
+  },
+  "devDependencies": {
+    "eslint": "^3.18.0",
+    "lite-server": "^2.3.0",
+    "uglify-js": "^2.8.12"
+  }
+}
