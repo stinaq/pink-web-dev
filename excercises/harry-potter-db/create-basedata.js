@@ -6,14 +6,11 @@
   const baseData = hpBaseData;
 
   function deleteAllCurrentData() {
-    let promisesOfAllUsers = userNames.map(userName => {
+    const promisesOfAllUsers = userNames.map(userName => {
       return fetch(`${baseUrl}?key=${userName}`)
       .then(response => response.json())
-      .then(data => {
-        return {
-          userName: userName,
-          characters: data        
-        };
+      .then(characters => {
+        return { userName, characters };
       });
     });
 
@@ -45,7 +42,7 @@
 
   function createAllCharacters() {
 
-    let promisesOfCharacters = userNames.map((userName) => {
+    const promisesOfCharacters = userNames.map((userName) => {
       return baseData.map((character) => {
         var headers = new Headers({
           "Content-Type": "application/json; charset=utf-8"
