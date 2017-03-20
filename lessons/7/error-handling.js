@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  function convertMeterToCm(meter) {
+  function convertCmToMeter(meter) {
     return meter/100;
   }
 
@@ -9,39 +9,40 @@
   convertButton.addEventListener('click', function(){
     var inputValue = document.querySelector('#cm-input').value;
     
-    var resultValue = convertMeterToCm(inputValue);
+    var resultValue = convertCmToMeter(inputValue);
     var resultElement = document.querySelector('#result');
 
     if(isNaN(resultValue)) {
-      resultElement.textContent = "Du måste ange en siffra";
+      resultElement.textContent = 'Du måste ange en siffra';
     } else {
       resultElement.textContent = resultValue;
     }
+
   });
 
-
   function getMonthNameFromNumber(number) {
-    var monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dec'];
-    var monthIndex = number - 1;
     if (number > 12) {
-      throw new Error('Finns inte så många månader');
+      throw new Error('För hög siffra på månad');
     } else {
-      return monthIndex[monthIndex];
+      var monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dec'];
+      var monthIndex = number - 1;
+      return monthNames[monthIndex]; 
     }
   }
 
-  // getMonthNameFromNumber(15);
+  var month = getMonthNameFromNumber(14);
 
-  var url = 'https://api.myjson.com/bins/hwwol';
-  // var url = 'https://api.myjson.com/bins/hfdsfsdfswwol';
+  console.log(month);
+
+  // var url = 'https://api.myjson.com/bins/hwwol';
+  var url = 'https://api.myjson.com/bins/hfdsfsdfswwol';
 
   fetch(url)
   .then(function(response) {
-    if (response.status === 500) {
-      throw Error(response.statusText);
-    } else {
-      return response.json();
+    if(response.status === 500) {
+      throw new Error('Hittade inte rätt');
     }
+    return response.json();
   })
   .then(function(data) {
     console.log('Det gick jättebra!');
@@ -49,7 +50,8 @@
   })
   .catch(function(error) {
     console.log('error!');
-    // alert(error);
+    alert(error);
+    console.log('gsdfsd');
   });
 
 })();

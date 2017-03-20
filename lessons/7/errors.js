@@ -8,11 +8,11 @@
   /*
     SYNTAXFEL:
     Här har jag glömt en parentes.
-    Då svarar datorn med "SyntaxError: Unexpected token ("
+    Då svarar datorn med "SyntaxError"
   */
-  // function( {
+  function hej( )
 
-  // }
+  }
 
   /* 
     RUNTIME ERRORS, ÄVEN KALLADE EXCEPTIONS
@@ -25,8 +25,8 @@
 
     Båda de ger exceptions, och datorn svarar med "Uncaught ReferenceError"
   */
-  // console.log(myVariableThatDoesNotExists);
-  // myNonExistingFunction();
+  console.log(myVariableThatDoesNotExists);
+  myNonExistingFunction();
 
   /*
     PROGRAMMERINGSFEL, eller logiska fel

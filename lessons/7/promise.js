@@ -3,16 +3,16 @@
 
   var url = 'http://httpstat.us/200';
 
-  var promiseOfARequest = fetch(url);
+  fetch(url)
+  .then(function(response) {
+    console.log('fick mat');
+    return response.json();
+  })
+  .then(function(responseAsJson) {
 
-  promiseOfARequest.then(function(response) {
-    console.log('gick bra!');
-    console.log(response);
-  });
-  
-  promiseOfARequest.catch(function(error) {
-    console.log('Gick inte alls bra, blev ett fel');
-    console.log(error);
+  })
+  .catch(function(error) {
+    console.log('gick dåligt :( ');
   });
   
 })();
