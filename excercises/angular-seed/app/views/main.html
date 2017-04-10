@@ -1,0 +1,9 @@
+<div class="jumbotron">
+  <h1>Harry Potter</h1>
+</div>
+
+<div class="row marketing">
+  <div ng-repeat="character in main.characters | filter:query | orderBy: 'name'">
+    <h3>{{ character.name }}</h3>
+  </div>
+</div>
