@@ -7,7 +7,7 @@
   "scripts": {
     "serve": "lite-server",
     "lint": "eslint -c .eslintrc.json src/",
-    "uglify": "uglifyjs -o ./src/main.min.js ./src/main.js"
+    "uglify": "uglifyjs --mangle --output ./src/main.min.js ./src/main.js ./src/main2.js"
   },
   "devDependencies": {
     "eslint": "^3.18.0",
