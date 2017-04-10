@@ -1,1 +1,4 @@
 /node_modules
+/dist
+*.min.js
+npm-debug.log
