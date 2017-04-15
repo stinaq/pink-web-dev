@@ -56,7 +56,8 @@ angular.module('angularSeedApp')
     };
 
     $ctrl.saveNewAnimal = function() {
-      console.log($ctrl.newName);
+      $ctrl.animals.push({name: $ctrl.newName, distinction: $ctrl.newDistinction});
+      $ctrl.clearNew();
     };
 
     $ctrl.clearNew = function() {

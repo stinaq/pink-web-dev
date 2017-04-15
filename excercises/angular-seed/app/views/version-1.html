@@ -8,7 +8,10 @@
       <input type="text" class="form-control" placeholder="Filter" ng-model="query">
     </div>
     <div ng-repeat="animal in $ctrl.animals | filter:query">
-      <h3>{{ animal.name }}</h3>
+      <h3>{{ animal.name }}
+
+        <button class="btn btn-default pull-right" ng-click="$ctrl.deleteAnimal($index)">Delete</button>
+      </h3>
       <p>{{ animal.distinction }}</p>
     </div>
   </div>
