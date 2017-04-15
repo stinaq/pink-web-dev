@@ -50,6 +50,11 @@ angular.module('angularSeedApp')
       },
   	];
 
+    $ctrl.deleteAnimal = function(index) {
+      console.log(index);
+      $ctrl.animals.splice(index, 1);
+    };
+
     $ctrl.saveNewAnimal = function() {
       console.log($ctrl.newName);
     };
