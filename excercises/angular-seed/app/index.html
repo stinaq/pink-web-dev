@@ -33,14 +33,16 @@
               <span class="icon-bar"></span>
             </button>
 
-            <a class="navbar-brand" href="#/">Harry Potter database</a>
+            <a class="navbar-brand" href="#/">The Animal List</a>
           </div>
 
           <div class="collapse navbar-collapse" id="js-navbar-collapse">
 
             <ul class="nav navbar-nav">
               <li class="active"><a href="#/">Home</a></li>
-              <li><a ng-href="#!/add">Add new</a></li>
+              <li><a ng-href="#!/version-1">Version 1</a></li>
+              <li><a ng-href="#!/version-2">Version 2</a></li>
+              <li><a ng-href="#!/version-3">Version 3</a></li>
             </ul>
           </div>
         </div>
@@ -48,13 +50,7 @@
     </div>
 
     <div class="container">
-    <div ng-view=""></div>
-    </div>
-
-    <div class="footer">
-      <div class="container">
-        <p><span class="glyphicon glyphicon-heart"></span></p>
-      </div>
+      <div ng-view=""></div>
     </div>
 
     <!-- build:js(.) scripts/vendor.js -->
@@ -70,8 +66,9 @@
 
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script src="scripts/app.js"></script>
+    <script src="scripts/services/animalService.js"></script>
     <script src="scripts/controllers/main.js"></script>
-    <script src="scripts/controllers/add.js"></script>
+    <script src="scripts/controllers/version-1.js"></script>
     <!-- endbuild -->
 </body>
 </html>
