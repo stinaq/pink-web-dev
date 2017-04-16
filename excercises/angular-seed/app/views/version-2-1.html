@@ -1,0 +1,44 @@
+<div class="row">
+  <div class="col-md-6">
+    <p>
+      På den här sidan så används en service i bakgrunden. Istället för att ha logiken i controllern, anropas nu en service från controllern. Det gör att samma funktionalitet (den som ligger i servicen), även kan anropas i en annan controller. Den funktionaliteten blir alltså återanvändningsbar.
+      Titta även på Version 2 del 2, så kan du se att samma service anrops, och samma data.
+    </p>
+    <h2>List of creatures</h2>
+    <ul class="list-group">
+      <li class="list-group-item" ng-repeat="creature in $ctrl.creatures">
+        <div class="creature-list">
+          <span ng-bind="creature.name" class="creature-list--text"></span>
+
+          <span class="dropdown creature-list--button">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+              <li><a ng-click="$ctrl.delete(creature.name)">Delete</a></li>
+            </ul>
+          </span>
+        </div>
+
+      </li>
+    </ul>
+  </div>
+
+  <div class="col-md-6">
+    <h2>Add new</h2>
+    <form>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" placeholder="Name" requred ng-model="$ctrl.newName">
+      </div>
+      <div class="form-group">
+        <label for="color">Color</label>
+        <input type="text" class="form-control" placeholder="Color" ng-model="$ctrl.newColor">
+      </div>
+      <button type="button" class="btn btn-default" ng-click="$ctrl.clearNew()">Clear</button>
+      <button type="submit" class="btn btn-primary" ng-click="$ctrl.addNew()">Save</button>
+    </form>
+  </div>
+  
+</div>

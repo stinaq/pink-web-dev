@@ -21,8 +21,12 @@ angular.module('angularSeedApp')
         linkText: 'Version 1'
       },
       {
-        title: 'version-2',
-        linkText: 'Version 2'
+        title: 'version-2-1',
+        linkText: 'Version 2 - del 1'
+      },
+      {
+        title: 'version-2-2',
+        linkText: 'Version 2 - del 2'
       },
       {
         title: 'version-3',

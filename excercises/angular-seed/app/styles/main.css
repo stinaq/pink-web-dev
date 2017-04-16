@@ -1,0 +1,13 @@
+.creature-list {
+  display: flex;
+  align-items: center;
+}
+
+.creature-list .dropdown-menu a:hover {
+  cursor: pointer;
+}
+
+.creature-list--text {
+  flex: 1;
+}
+

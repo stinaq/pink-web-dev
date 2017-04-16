@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-md-6">
+    <p>
+      På den här sidan används samma service som i version 2, del 1. Det går alltså att återanvända funktionalitet, och samma data visas ut.
+
+      Tar du bort data på denna sidan så ändras den även i del 1.
+    </p>
+    <h2>List of creatures</h2>
+    <div ng-repeat="creature in $ctrl.creatures">
+      <h4>{{ creature.name }}
+        <button ng-click="$ctrl.delete(creature.name)" class="btn btn-default">Delete</button>
+      </h4>
+      <p>{{ creature.color }}</p>
+    </div>
+    
+  </div>
+  
+</div>
