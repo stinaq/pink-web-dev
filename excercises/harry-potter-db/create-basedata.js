@@ -67,7 +67,7 @@
     })
   }
 
-  // deleteAllCurrentData();
-  createAllCharacters();
+  deleteAllCurrentData();
+  // createAllCharacters();
 
 })();
