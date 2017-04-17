@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Animal list</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -37,13 +37,7 @@
           </div>
 
           <div class="collapse navbar-collapse" id="js-navbar-collapse">
-
             <ul class="nav navbar-nav">
-<!--               <li class="active"><a href="#/">Home</a></li>
-              <li ng-class="{active: isActive('/tasks')}"><a ng-href="#!/version-1">Version 1</a></li>
-              <li><a ng-href="#!/version-2">Version 2</a></li>
-              <li><a ng-href="#!/version-3">Version 3</a></li> -->
-
               <li
                 ng-repeat="navLink in navCtrl.navLinks"
                 ng-class="{active: navCtrl.isActive('{{ navLink.title }}')}">
@@ -72,11 +66,13 @@
 
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script src="scripts/app.js"></script>
-    <script src="scripts/services/creatureService.js"></script>
+    <script src="scripts/services/creature-service.js"></script>
+    <script src="scripts/services/http-service.js"></script>
     <script src="scripts/controllers/main.js"></script>
     <script src="scripts/controllers/version-1.js"></script>
     <script src="scripts/controllers/version-2-1.js"></script>
     <script src="scripts/controllers/version-2-2.js"></script>
+    <script src="scripts/controllers/version-3.js"></script>
     <script src="scripts/controllers/navigation.js"></script>
     <!-- endbuild -->
 </body>

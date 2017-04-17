@@ -35,6 +35,11 @@ angular
         controller: 'Version22Ctrl',
         controllerAs: '$ctrl'
       })
+      .when('/version-3', {
+        templateUrl: 'views/version-3.html',
+        controller: 'Version3Ctrl',
+        controllerAs: '$ctrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
