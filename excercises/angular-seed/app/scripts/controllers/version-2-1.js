@@ -11,6 +11,7 @@ angular.module('angularSeedApp')
   .controller('Version21Ctrl', function (creatureService) {
   	var $ctrl = this;
 
+    // This is the way the service is being used.
     $ctrl.creatures = creatureService.creatures;
 
   	$ctrl.delete = function(name) {

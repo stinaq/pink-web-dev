@@ -11,6 +11,7 @@ angular.module('angularSeedApp')
   .controller('Version1Ctrl', function () {
   	var $ctrl = this;
 
+    // This is the hard coded data used in the HTML, in the file views/version-1.html
   	$ctrl.animals = [
       {
         name: 'Acromantula',
@@ -50,15 +51,18 @@ angular.module('angularSeedApp')
       },
   	];
 
+    // A function for deleting an animal
     $ctrl.deleteAnimal = function(index) {
       $ctrl.animals.splice(index, 1);
     };
 
+    // A function for adding a new animal
     $ctrl.saveNewAnimal = function() {
       $ctrl.animals.push({name: $ctrl.newName, distinction: $ctrl.newDistinction});
       $ctrl.clearNew();
     };
 
+    // This function clears the input fields for adding a new animal
     $ctrl.clearNew = function() {
       $ctrl.newName = '';
       $ctrl.newDistinction = '';
