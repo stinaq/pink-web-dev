@@ -20,7 +20,15 @@ angular.module('angularSeedApp')
     });
 
     $ctrl.deleteCharacter = function(id) {
+      console.log('$ctrl.characters');
+      console.log($ctrl.characters);
       httpService.deleteCharacter(id);
+      setTimeout(function() {
+        $ctrl.characters2 = httpService.state.characters;
+
+        console.log('$ctrl.characters2');
+        console.log($ctrl.characters);
+      }, 2000);
     };
 
     $ctrl.addCharacter = function() {
@@ -28,6 +36,13 @@ angular.module('angularSeedApp')
         name: $ctrl.newName,
         species: $ctrl.newSpecies
       });
+
+      setTimeout(function() {
+        $ctrl.characters2 = httpService.state.characters;
+
+        console.log('$ctrl.characters2');
+        console.log($ctrl.characters);
+      }, 2000);
     };
 
   });
