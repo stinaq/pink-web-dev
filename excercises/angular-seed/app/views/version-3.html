@@ -1,5 +1,15 @@
-<div>
-  <ul>
-    <li ng-repeat="creature in $ctrl.creatures">{{ creature.name }}</li>
-  </ul>
+<div class="row">
+  <div class="col-md-6">
+    <ul>
+      <li ng-repeat="character in $ctrl.characters">
+        {{ character.name }}, {{ character.species}}
+        <button ng-click="$ctrl.deleteCharacter(character._id)">Delete</button>
+      </li>
+    </ul>
+  </div>
+  <div class="col-md-6">
+    <input type="text" name="new name" ng-model="$ctrl.newName">
+    <input type="text" name="new species" ng-model="$ctrl.newSpecies">
+    <button ng-click="$ctrl.addCharacter()">Save</button>
+  </div>
 </div>

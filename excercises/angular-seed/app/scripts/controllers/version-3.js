@@ -8,13 +8,26 @@
  * Controller of the angularSeedApp
  */
 angular.module('angularSeedApp')
-  .controller('Version3Ctrl', function (httpService) {
+  .controller('Version3Ctrl', function ($scope, httpService) {
     var $ctrl = this;
 
-    $ctrl.creatures = httpService.state.creatures;
 
-    $ctrl.delete = function(name) {
-      httpService.delete(name);
+    $ctrl.characters = httpService.state.characters;
+
+    $scope.$watch('$ctrl.characters', function(n, o) {
+      console.log('watch');
+      console.log(n, o);
+    });
+
+    $ctrl.deleteCharacter = function(id) {
+      httpService.deleteCharacter(id);
+    };
+
+    $ctrl.addCharacter = function() {
+      httpService.addCharacter({
+        name: $ctrl.newName,
+        species: $ctrl.newSpecies
+      });
     };
 
   });

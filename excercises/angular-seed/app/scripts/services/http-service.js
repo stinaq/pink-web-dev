@@ -3,26 +3,52 @@
 
   var httpService = function ($http) {
     var state = {};
-    state.creatures = {};
+    state.characters = {};
 
-    $http({
-      method: 'GET',
-      url: 'https://testapi.pinkwebdev.se/api/characters?key=stinaq'
-    }).then(function successCallback(response) {
-      console.log(response.data);
-      angular.extend(state.creatures, response.data);
-      state.creatures = response.data;
-        // this callback will be called asynchronously
-        // when the response is available
-      }, function errorCallback(response) {
-        console.log(response);
-        // called asynchronously if an error occurs
-        // or server returns response with an error status.
-      });
+    var getAllCharacters = function() {
+      console.log('getting all the characters');
+      // This function gets all the characters currently in the database
+      // This is called when the service is first loaded (at the end of the file)
+      // and then also when another updates (for example delete) is made, since
+      // we then need to get all the characters again
+      $http({
+        method: 'GET',
+        url: 'https://testapi.pinkwebdev.se/api/characters?key=stinaq'
+      }).then(function successCallback(response) {
+        // Here is where we set the state
+        angular.extend(state.characters, response.data);
+        state.characters = response.data;
+        console.log(state.characters);
+        }, errorLogger);
+    };
 
+    var errorLogger = function(response) {
+      console.log(response);
+    };
+
+    var deleteCharacter = function(id) {
+      console.log('doing delete');
+      $http({
+        method: 'DELETE',
+        url: 'https://testapi.pinkwebdev.se/api/characters/' + id + '?key=stinaq'
+      }).then(getAllCharacters, errorLogger);
+    };
+
+    var addCharacter = function(character) {
+      console.log('Adding a character');
+      $http({
+        method: 'POST',
+        data: character,
+        url: 'https://testapi.pinkwebdev.se/api/characters/?key=stinaq'
+      }).then(getAllCharacters, errorLogger);
+    };
+
+    getAllCharacters();
 
     return {
-      state: state
+      state: state,
+      deleteCharacter: deleteCharacter,
+      addCharacter: addCharacter
     };
   };
 
