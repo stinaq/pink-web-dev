@@ -6,14 +6,6 @@
         <button ng-click="$ctrl.deleteCharacter(character._id)">Delete</button>
       </li>
     </ul>
-
-    <ul>
-      <li>hej</li>
-      <li ng-repeat="character in $ctrl.characters2">
-        {{ character.name }}, {{ character.species}}
-        <button ng-click="$ctrl.deleteCharacter(character._id)">Delete</button>
-      </li>
-    </ul>
   </div>
   <div class="col-md-6">
     <input type="text" name="new name" ng-model="$ctrl.newName">

@@ -14,7 +14,7 @@ angular.module('angularSeedApp')
 
     $ctrl.characters = httpService.state.characters;
 
-    $scope.$watch('$ctrl.characters', function(n, o) {
+    $scope.$watch('characters', function(n, o) {
       console.log('watch');
       console.log(n, o);
     });
@@ -24,7 +24,7 @@ angular.module('angularSeedApp')
       console.log($ctrl.characters);
       httpService.deleteCharacter(id);
       setTimeout(function() {
-        $ctrl.characters2 = httpService.state.characters;
+        // $ctrl.characters2 = httpService.state.characters;
 
         console.log('$ctrl.characters2');
         console.log($ctrl.characters);
@@ -37,8 +37,16 @@ angular.module('angularSeedApp')
         species: $ctrl.newSpecies
       });
 
+              console.log('in add');
+        console.log($ctrl.characters);
       setTimeout(function() {
-        $ctrl.characters2 = httpService.state.characters;
+        // $ctrl.characters2 = httpService.state.characters;
+        // $ctrl.characters = httpService.state.characters;
+
+        // $scope.$digest();
+// debugger;
+        // httpService.getAllCharacters();
+
 
         console.log('$ctrl.characters2');
         console.log($ctrl.characters);

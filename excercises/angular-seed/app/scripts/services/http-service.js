@@ -3,7 +3,7 @@
 
   var httpService = function ($http) {
     var state = {};
-    state.characters = {};
+    state.characters = [];
 
     var getAllCharacters = function() {
       console.log('getting all the characters');
@@ -16,8 +16,14 @@
         url: 'https://testapi.pinkwebdev.se/api/characters?key=stinaq'
       }).then(function successCallback(response) {
         // Here is where we set the state
-        angular.extend(state.characters, response.data);
-        state.characters = response.data;
+        // debugger;
+        state.characters.splice(0, state.characters.length);
+        // state.characters = response.data.map(function(item) {
+        //   return item;
+        // });
+        // debugger;
+        state.characters.push.apply(state.characters, response.data);
+        // state.characters = response.data;
         console.log(state.characters);
         }, errorLogger);
     };
@@ -47,6 +53,7 @@
 
     return {
       state: state,
+      getAllCharacters: getAllCharacters,
       deleteCharacter: deleteCharacter,
       addCharacter: addCharacter
     };
