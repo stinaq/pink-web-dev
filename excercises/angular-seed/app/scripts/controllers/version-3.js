@@ -11,46 +11,36 @@ angular.module('angularSeedApp')
   .controller('Version3Ctrl', function ($scope, httpService) {
     var $ctrl = this;
 
-
     $ctrl.characters = httpService.state.characters;
 
-    $scope.$watch('characters', function(n, o) {
-      console.log('watch');
-      console.log(n, o);
-    });
-
     $ctrl.deleteCharacter = function(id) {
-      console.log('$ctrl.characters');
-      console.log($ctrl.characters);
       httpService.deleteCharacter(id);
-      setTimeout(function() {
-        // $ctrl.characters2 = httpService.state.characters;
-
-        console.log('$ctrl.characters2');
-        console.log($ctrl.characters);
-      }, 2000);
     };
 
     $ctrl.addCharacter = function() {
+      // Here the character is put together and sent to the service
+      // The reason death eater is different is that there is a hyphen in it
+      // so the quotations around is neccessary
       httpService.addCharacter({
         name: $ctrl.newName,
-        species: $ctrl.newSpecies
+        species: $ctrl.newSpecies,
+        wand: $ctrl.newWand,
+        profession: $ctrl.newProfession,
+        description: $ctrl.newDescription,
+        'death-eater': $ctrl.newDeathEater
       });
 
-              console.log('in add');
-        console.log($ctrl.characters);
-      setTimeout(function() {
-        // $ctrl.characters2 = httpService.state.characters;
-        // $ctrl.characters = httpService.state.characters;
-
-        // $scope.$digest();
-// debugger;
-        // httpService.getAllCharacters();
-
-
-        console.log('$ctrl.characters2');
-        console.log($ctrl.characters);
-      }, 2000);
+      $ctrl.clearNewForm();
     };
+
+    $ctrl.clearNewForm = function() {
+      $ctrl.newName = '';
+      $ctrl.newSpecies = '';
+      $ctrl.newWand = '';
+      $ctrl.newProfession = '';
+      $ctrl.newDescription = '';
+      $ctrl.newDeathEater = false;
+    };
+
 
   });

@@ -1,15 +1,53 @@
 <div class="row">
   <div class="col-md-6">
-    <ul>
-      <li ng-repeat="character in $ctrl.characters">
-        {{ character.name }}, {{ character.species}}
-        <button ng-click="$ctrl.deleteCharacter(character._id)">Delete</button>
-      </li>
-    </ul>
+    <h3>All characters</h3>
+
+    <div ng-repeat="character in $ctrl.characters">
+      <h4>{{ character.name }}</h4>
+      <p><b>Species:</b> {{ character.species }}</p>
+      <p><b>Profession:</b> {{ character.profession }}</p>
+      <p><b>Wand:</b> {{ character.wand }}</p>
+      <p><b>Description:</b> {{ character.description }}</p>
+      <p><b>Death-eater:</b> {{ character['death-eater'] }}</p>
+      <button class="btn btn-default btn-xs" ng-click="$ctrl.deleteCharacter(character._id)">Delete</button>
+    </div>
   </div>
   <div class="col-md-6">
-    <input type="text" name="new name" ng-model="$ctrl.newName">
-    <input type="text" name="new species" ng-model="$ctrl.newSpecies">
-    <button ng-click="$ctrl.addCharacter()">Save</button>
+    <h3>Create new character</h3>
+    <form>
+      <div class="form-group">
+        <label>Name</label>
+        <input class="form-control" placeholder="Name" ng-model="$ctrl.newName">
+      </div>
+
+      <div class="form-group">
+        <label>Species</label>
+        <input class="form-control" placeholder="Species" ng-model="$ctrl.newSpecies">
+      </div>
+
+      <div class="form-group">
+        <label>Wand</label>
+        <input class="form-control" placeholder="Wand" ng-model="$ctrl.newWand">
+      </div>
+
+      <div class="form-group">
+        <label>Profession</label>
+        <input class="form-control" placeholder="Profession" ng-model="$ctrl.newProfession">
+      </div>
+
+      <div class="form-group">
+        <label>Description</label>
+        <textarea class="form-control" placeholder="Description" ng-model="$ctrl.newDescription"></textarea>
+      </div>
+
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" ng-model="$ctrl.newDeathEater">Death eater
+        </label>
+      </div>
+
+      <button class="btn btn-default" ng-click="$ctrl.clearNewForm()">Clear</button>
+      <button class="btn btn-primary" ng-click="$ctrl.addCharacter()">Save</button>
+    </form>
   </div>
 </div>
